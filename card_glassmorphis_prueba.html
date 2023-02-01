@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu_glassmorphis_bar</title>
+    <link rel="stylesheet" href="menu_glassmorphis_bar.css">
+</head>
+<body>
+    <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Acerca</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Portafolio</a></li>
+        <li><a href="#">Contactame</a></li>
+        <div id="marker"></div>
+    </ul>
+
+    <script>
+        const marker = document.querySelector('#marker');
+        const item = document.querySelectorAll('ul li a');
+        function Indicator(e){
+            marker.style.left = e.offsetLeft+'px';
+            marker.style.width = e.offsetWidth+'px';
+        }
+        item.forEach(link => {
+            link.addEventListener('mousemove', (e) => {
+                Indicator(e.target);
+            })
+        })
+    </script>
+</body>
+</html>
